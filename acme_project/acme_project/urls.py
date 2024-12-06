@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
 
+
 urlpatterns = [
     path('', include('pages.urls')),
     path('admin/', admin.site.urls),
@@ -18,3 +19,5 @@ urlpatterns = [
         name='registration',
     ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'core.views.page_not_found'
