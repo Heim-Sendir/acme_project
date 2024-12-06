@@ -33,7 +33,13 @@ MIDDLEWARE = [
 
 MEDIA_ROOT = BASE_DIR / 'media'
 
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = BASE_DIR / 'sent_emails'
+
 ROOT_URLCONF = 'acme_project.urls'
+
+LOGIN_REDIRECT_URL = 'pages:homepage'
+LOGIN_URL = 'login'
 
 TEMPLATES_DIR = BASE_DIR / 'templates'
 
